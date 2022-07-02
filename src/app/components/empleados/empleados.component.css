@@ -1,0 +1,21 @@
+html,body{
+    height:100%;
+}
+table{
+    width: 100%;
+}
+div{
+    justify-content: center;
+    align-items: center;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    height:90%;
+}
+.pointer{
+cursor: pointer;
+
+}
+.mat-form-field {
+    font-size: 14px;
+    width: 50%;
+  }
