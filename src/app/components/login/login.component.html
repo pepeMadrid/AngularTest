@@ -3,17 +3,18 @@
         <h1>login</h1>
         <img src="../../../assets/img/loginUser.png" alt="Login">
         <br><br>
-        <form class="form">
+        <form *ngIf="!cargando" class="form" [formGroup]="formularioLogin" (ngSubmit)="loguear()">
             <mat-form-field class="input" appearance="fill">
               <mat-label >Email</mat-label>
-              <input  matInput placeholder="" value="">
+              <input  matInput placeholder="" value="" formControlName="user" type="text">
             </mat-form-field>
             <mat-form-field class="input" appearance="fill">
-                <mat-label>Password</mat-label>
-                <input matInput placeholder="" value="">
-              </mat-form-field>
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="" value="" formControlName="pass" type="password">
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" [disabled]="formularioLogin.invalid">Aceptar</button>
         </form>
-        <button mat-raised-button color="primary">Aceptar</button>
+        <mat-spinner *ngIf="cargando" diameter="50" class="spinner"></mat-spinner>
     </div>
 </div>
 
